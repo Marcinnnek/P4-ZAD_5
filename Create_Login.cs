@@ -22,7 +22,7 @@ namespace P4_PROJEKT_NR_1
         private void buttonRegister_Click(object sender, EventArgs e)
         {
 
-            if (textBoxUserName.Text.Contains(" ") && textBoxRePassword.Text.Contains(" "))
+            if (textBoxUserName.Text.Contains(" ") || string.IsNullOrWhiteSpace(textBoxUserName.Text))
             {
                 MessageBox.Show("Login nie może zawierać spacji!");
             }
@@ -79,7 +79,11 @@ namespace P4_PROJEKT_NR_1
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (!textBoxLoginPassword.Text.Contains(" "))
+            if (string.IsNullOrWhiteSpace(textBoxLogin.Text) || textBoxLogin.Text.Contains(" "))
+            {
+                MessageBox.Show("Login nie może zawierać spacji!");
+            }
+            else
             {
                 if (textBoxLogin.TextLength > 3)
                 {
@@ -89,7 +93,7 @@ namespace P4_PROJEKT_NR_1
                         {
                             if (User.Uzyszkodnicy.ContainsKey(textBoxLogin.Text) && User.Uzyszkodnicy.ContainsValue(textBoxLoginPassword.Text))
                             {
-                                MessageBox.Show($"Zalogowano użytkownika: {textBoxUserName.Text}!");
+                                MessageBox.Show($"Zalogowano użytkownika: {textBoxLogin.Text}!");
                             }
                             else
                             {
@@ -110,10 +114,6 @@ namespace P4_PROJEKT_NR_1
                 {
                     MessageBox.Show("Za krótki login!");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Login nie może zawierać spacji!");
             }
         }
     }
