@@ -15,6 +15,109 @@ namespace P4_PROJEKT_NR_1
         public Create_Login()
         {
             InitializeComponent();
+            User admin = new User("admin", "admin1");
+            User.AddUser(admin);
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+
+            if (textBoxUserName.Text.Contains(" ") && textBoxRePassword.Text.Contains(" "))
+            {
+                MessageBox.Show("Login nie może zawierać spacji!");
+            }
+            else
+            {
+                if (!textBoxRePassword.Text.Contains(" "))
+                {
+                    if (textBoxUserName.TextLength > 3)
+                    {
+                        if (textBoxRePassword.TextLength >= 6)
+                        {
+                            if (textBoxRePassword.Text == textBoxReRPassword.Text)
+                            {
+                                if (checkBoxRODO.Checked)
+                                {
+                                    if (!User.Uzyszkodnicy.ContainsKey(textBoxUserName.Text))
+                                    {
+                                        User.AddUser(new User(textBoxUserName.Text, textBoxRePassword.Text));
+                                        MessageBox.Show("Dodano użytkownika!!!");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Istnieje już taki użytkownik!");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Nie zaakceptowano RODO!");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Hasło nie jest identyczne!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Za krótkie hasło!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Za krótki login!");
+                    }
+                }
+
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            if (!textBoxLoginPassword.Text.Contains(" "))
+            {
+                if (textBoxLogin.TextLength > 3)
+                {
+                    if (textBoxLoginPassword.TextLength >= 6)
+                    {
+                        if (User.Uzyszkodnicy.ContainsKey(textBoxLogin.Text))
+                        {
+                            if (User.Uzyszkodnicy.ContainsKey(textBoxLogin.Text) && User.Uzyszkodnicy.ContainsValue(textBoxLoginPassword.Text))
+                            {
+                                MessageBox.Show($"Zalogowano użytkownika: {textBoxUserName.Text}!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Błędne hasło!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nie ma takiego użytkownika!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Za krótkie hasło!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Za krótki login!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Login nie może zawierać spacji!");
+            }
         }
     }
+
 }
+
+

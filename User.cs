@@ -8,8 +8,7 @@ namespace P4_PROJEKT_NR_1
 {
     public class User
     {
-        static List<User> Users = new List<User> { };
-       
+        public static Dictionary<string, string> Uzyszkodnicy = new Dictionary<string, string>();
         public string UserName { get; set; }
         public string Password { get; set; }
 
@@ -20,7 +19,7 @@ namespace P4_PROJEKT_NR_1
         }
         public static void AddUser(User user)
         {
-            Users.Add(user);
+            Uzyszkodnicy.Add(user.UserName, user.Password);
         }
 
     }

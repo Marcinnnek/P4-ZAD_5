@@ -32,12 +32,12 @@ namespace P4_PROJEKT_NR_1
             this.labelUserName = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelRepeatPassword = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxUserName = new System.Windows.Forms.TextBox();
+            this.textBoxRePassword = new System.Windows.Forms.TextBox();
+            this.textBoxReRPassword = new System.Windows.Forms.TextBox();
             this.checkBoxRODO = new System.Windows.Forms.CheckBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxLoginPassword = new System.Windows.Forms.TextBox();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelLoginPassword = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -72,26 +72,28 @@ namespace P4_PROJEKT_NR_1
             this.labelRepeatPassword.TabIndex = 2;
             this.labelRepeatPassword.Text = "Repeat Password:";
             // 
-            // textBox1
+            // textBoxUserName
             // 
-            this.textBox1.Location = new System.Drawing.Point(194, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 26);
-            this.textBox1.TabIndex = 3;
+            this.textBoxUserName.Location = new System.Drawing.Point(194, 34);
+            this.textBoxUserName.Name = "textBoxUserName";
+            this.textBoxUserName.Size = new System.Drawing.Size(186, 26);
+            this.textBoxUserName.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxRePassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(194, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 26);
-            this.textBox2.TabIndex = 4;
+            this.textBoxRePassword.Location = new System.Drawing.Point(194, 67);
+            this.textBoxRePassword.Name = "textBoxRePassword";
+            this.textBoxRePassword.PasswordChar = '*';
+            this.textBoxRePassword.Size = new System.Drawing.Size(186, 26);
+            this.textBoxRePassword.TabIndex = 4;
             // 
-            // textBox3
+            // textBoxReRPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(194, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(186, 26);
-            this.textBox3.TabIndex = 5;
+            this.textBoxReRPassword.Location = new System.Drawing.Point(194, 100);
+            this.textBoxReRPassword.Name = "textBoxReRPassword";
+            this.textBoxReRPassword.PasswordChar = '*';
+            this.textBoxReRPassword.Size = new System.Drawing.Size(186, 26);
+            this.textBoxReRPassword.TabIndex = 5;
             // 
             // checkBoxRODO
             // 
@@ -103,19 +105,20 @@ namespace P4_PROJEKT_NR_1
             this.checkBoxRODO.Text = "Zgoda RODO";
             this.checkBoxRODO.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // textBoxLogin
             // 
-            this.textBox4.Location = new System.Drawing.Point(577, 34);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(198, 26);
-            this.textBox4.TabIndex = 7;
+            this.textBoxLogin.Location = new System.Drawing.Point(577, 34);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(198, 26);
+            this.textBoxLogin.TabIndex = 7;
             // 
-            // textBox5
+            // textBoxLoginPassword
             // 
-            this.textBox5.Location = new System.Drawing.Point(577, 67);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(198, 26);
-            this.textBox5.TabIndex = 8;
+            this.textBoxLoginPassword.Location = new System.Drawing.Point(577, 67);
+            this.textBoxLoginPassword.Name = "textBoxLoginPassword";
+            this.textBoxLoginPassword.PasswordChar = '*';
+            this.textBoxLoginPassword.Size = new System.Drawing.Size(198, 26);
+            this.textBoxLoginPassword.TabIndex = 8;
             // 
             // labelLogin
             // 
@@ -143,6 +146,7 @@ namespace P4_PROJEKT_NR_1
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonRegister
             // 
@@ -152,6 +156,7 @@ namespace P4_PROJEKT_NR_1
             this.buttonRegister.TabIndex = 12;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // buttonLogin
             // 
@@ -161,6 +166,7 @@ namespace P4_PROJEKT_NR_1
             this.buttonLogin.TabIndex = 13;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // Create_Login
             // 
@@ -172,17 +178,17 @@ namespace P4_PROJEKT_NR_1
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelLoginPassword);
             this.Controls.Add(this.labelLogin);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxLoginPassword);
+            this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.checkBoxRODO);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxReRPassword);
+            this.Controls.Add(this.textBoxRePassword);
+            this.Controls.Add(this.textBoxUserName);
             this.Controls.Add(this.labelRepeatPassword);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUserName);
             this.Name = "Create_Login";
-            this.Text = "Create_Login";
+            this.Text = "Rejestracja i logowanie";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,12 +199,12 @@ namespace P4_PROJEKT_NR_1
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelRepeatPassword;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxUserName;
+        private System.Windows.Forms.TextBox textBoxRePassword;
+        private System.Windows.Forms.TextBox textBoxReRPassword;
         private System.Windows.Forms.CheckBox checkBoxRODO;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textBoxLoginPassword;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Label labelLoginPassword;
         private System.Windows.Forms.Button buttonCancel;

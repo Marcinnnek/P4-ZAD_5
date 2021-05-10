@@ -11,7 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using P4_PROJEKT_NR_1.Forms;
+
+
 
 namespace P4_PROJEKT_NR_1
 {
@@ -27,7 +28,7 @@ namespace P4_PROJEKT_NR_1
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Login());
+            Application.Run(new Create_Login());
         }
     }
 }
